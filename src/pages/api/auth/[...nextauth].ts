@@ -21,9 +21,25 @@ export const authOptions = {
       
       try {
         await fauna.query(
-          q.Create(
-            q.Collection('users'),
-            { data: { email }}
+          q.If( // se nao existe usuario que bate com o index
+            q.Not(
+              q.Exists(
+                q.Match(
+                  q.Index('user_by_email'),
+                  q.Casefold(user.email)
+                )
+              )
+            ),
+            q.Create( // faz o create
+              q.Collection('users'),
+              { data: { email }}
+            ),
+            q.Get( // se não faz o get
+              q.Match(
+                q.Index('user_by_email'),
+                q.Casefold(user.email)
+              )
+            )
           )
         )
         return true
