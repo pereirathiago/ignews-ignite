@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { getSession, useSession } from "next-auth/react"
 import { prismic } from "../../../services/prismic"
 import { RichText } from "prismic-dom"
@@ -50,9 +50,11 @@ export default function PostPreview({ post }: PostPreviewProps) {
   )
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: [],
+    paths: [
+      // { params: { slug: 'python-entendendo-heranca-multipla-da-melhor-manei' } }
+    ],
     fallback: 'blocking'
   }
 
@@ -79,7 +81,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post
-    }
+    },
+    redirect: 60 * 30 // 30 minutes
   }
 
 }
