@@ -1,40 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <img alt="Logo" src="./public/images/logo.svg" alt="ig.News">
+</h1>
 
-## Getting Started
 
-First, run the development server:
+# :clipboard: Índice
+
+- [Sobre](#sobre)
+- [Tecnologias Utilizadas](#tecnologias)
+- [Requisitos](#requisitos)
+- [Como Executar o Projeto](#executar)
+- [License](#license)
+
+---
+
+<a id="sobre"></a>
+
+# :scroll: Sobre
+
+ O <b>ig.news</b> é uma plataforma de noticias, desenvolvido durante a Trilha 2021 do Ignite ReactJS.
+
+
+
+ ---
+
+ <a id="tecnologias"></a>
+
+ # :rocket: Tecnologias Utilizadas
+
+ O projeto foi desenvolvido em:
+
+ - [NextJS](https://nextjs.org/)
+ - [Typescript](https://www.typescriptlang.org/)
+ - [SASS](https://sass-lang.com/)
+ - [Next-Auth](https://next-auth.js.org/)
+ - [Stripe](https://stripe.com/br)
+ - [FaunaDB](https://fauna.com/)
+ - [Prismic CMS](https://prismic.io/)
+
+ ---
+
+ <a id="requisitos"></a>
+
+ # :clipboard: Requisitos
+
+ ### Necessário para realizar as instalações
+
+ - [Git](https://git-scm.com/)
+ - [Yarn](https://classic.yarnpkg.com) ou semelhante
+ - [Stripe CLI](https://stripe.com/docs/stripe-cli)
+
+ ### Crie uma conta nos seguintes serviços externos:
+ 
+ - [Stripe](https://stripe.com/)
+ - [Github](https://github.com//)
+ - [FaunaDB](https://fauna.com/)
+ - [Prismic CMS](https://prismic.io/)
+
+ Siga os passos de [Configurações dos serviços](./configServicos.md) no arquivo [configServicos.md](./configServicos.md)
+
+ ---
+
+ <a id="executar"></a>
+
+# :computer: Como Executar o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    # Clonar o repositório
+    git clone https://github.com/pereirathiago/ignews-ignite.git
+
+    # Entrar no projeto
+    cd ignews-ignite
+
+    # Baixar as dependências
+    yarn
+
+    # Copiar o arquivo env
+    cp .env.local.example .env.local
+
+    # Executar o stripe listen cli para ouvir os webhooks
+    stripe listen --forward-to localhost:3000/api/webhooks
+
+    # Executar o servido
+    yarn dev
 ```
+Depois disso abra seu navegador favorito e entre na URL "http://localhost:3000"
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<a id="license"><a>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## :memo: License
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="center">
+    Feito com 💜 por Thiago Pereira
+</p>
