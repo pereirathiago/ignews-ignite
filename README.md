@@ -21,6 +21,10 @@
 
 
 
+https://github.com/pereirathiago/ignews-ignite/assets/63749154/5e6ea4d8-f0c4-4281-8edd-477e668b36cd
+
+
+
  ---
 
  <a id="tecnologias"></a>
